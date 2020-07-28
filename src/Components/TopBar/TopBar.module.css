@@ -1,0 +1,37 @@
+.TopBar {
+  background-color: gray;
+  color: white;
+}
+
+.TopBar > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Heading {
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.Cart{
+  position: relative;
+}
+
+.CartImage {
+  width: 45px;
+  color: white;
+  filter: invert();
+}
+
+.CartValue {
+  background-color: crimson;
+  color: white;
+  width: 20px;
+  font-size: 0.95rem;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}

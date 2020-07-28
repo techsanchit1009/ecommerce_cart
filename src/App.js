@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TopBar from './Components/TopBar/TopBar';
+import Items from './Components/Items/Items';
+import { connect } from 'react-redux';
 
-function App() {
+const App = (props) => {
+  const { items, totalCount } = props;
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TopBar totalCount={totalCount} />
+      <Items items={items} />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    items: state.items,
+    totalCount: state.totalCount
+  }
+}
+
+export default connect(mapStateToProps)(App);
